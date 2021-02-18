@@ -59,12 +59,9 @@ video.addEventListener( 'play', () =>
 	const displaySize = { width: video.offsetWidth, height: video.offsetHeight };
 	faceapi.matchDimensions( canvas, displaySize );
 
-    var seconds = 0;
-    var matches = 0;
-    var matchAudio = new Audio('../static/sound effects/match-sound-effect.wav');
-    var winGameAudio = new Audio('../static/sound effects/win-game.wav');
+    gameOn();
 
-	const gameOn = setInterval( async () => 
+	async function gameOn()
 	{
 		const detections = await faceapi.detectAllFaces( video, new faceapi.TinyFaceDetectorOptions() ).withFaceLandmarks().withFaceExpressions();
 		const resizedDetections = faceapi.resizeResults( detections, displaySize );
@@ -76,6 +73,7 @@ video.addEventListener( 'play', () =>
         if( !detections[0] )
         {
             _('.adjust-position').classList.remove("hidden");
+            setTimeout(gameOn, 1000);
         }
         else
         {
@@ -104,8 +102,12 @@ video.addEventListener( 'play', () =>
                     winGameAudio.play();
                 }
             }
+            else
+            {
+                setTimeout(gameOn, 1000);
+            }
 
             seconds = incrementSeconds( seconds, '.timer' );
         }
-    }, 1000)
-})
+    }
+});
