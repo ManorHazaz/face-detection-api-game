@@ -70,6 +70,8 @@ video.addEventListener( 'play', () =>
 		faceapi.draw.drawFaceLandmarks( canvas, resizedDetections );
 		faceapi.draw.drawFaceExpressions( canvas, resizedDetections );
 
+        _('.loader').classList.add("hidden");
+
         if( !detections[0] )
         {
             _('.adjust-position').classList.remove("hidden");
