@@ -87,6 +87,7 @@ video.addEventListener( 'play', () =>
                 addV( matches );
                 if( mute )
                 {
+                    matchAudio.currentTime = 0;
                     matchAudio.play();
                 }
             }
