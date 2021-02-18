@@ -21,12 +21,9 @@ function getEmojis()
 
 function startVideo( video ) 
 {
-	navigator.getUserMedia
-    (
-		{ video: {} },
-		stream => video.srcObject = stream,
-		err => console.error( err )
-	);
+    navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function( mediaStream ) { video.srcObject = mediaStream })
+    .catch(function(error) { console.log("The following error occured: " + error); })
 }
 
 function shuffle( array ) 
