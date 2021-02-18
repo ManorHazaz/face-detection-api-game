@@ -2,8 +2,8 @@
 
 :root
 {
-    --primary-color: #34d4c7;
-    --secondary-color: #888
+    --primary-color: #5B61B9;
+    --secondary-color: #E8E5F3;
 }
 
 html
@@ -38,7 +38,8 @@ canvas
     width: 80vw;
     height: 75vh;
     padding: 2rem;
-    background-color: var(--primary-color);
+    background: rgb(91,97,185);
+    background: linear-gradient(90deg, rgba(91,97,185,1) 0%, rgba(176,163,222,1) 50%, rgba(91,97,185,1) 100%);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
@@ -73,7 +74,7 @@ canvas
     width: 20%;
     margin: 1rem auto;
     background-color: var(--secondary-color);
-    padding: 2rem;
+    padding: 1rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     transition: 0.3s;
 }

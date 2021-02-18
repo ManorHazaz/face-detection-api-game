@@ -13,6 +13,7 @@
 .game-container .game-board
 {
     width: 92vh;
+    
 }
 
 .game-container .emojis-todo
@@ -32,14 +33,50 @@
 
 .game-container .timer
 {
-    position: fixed;
-    top: 5%;
+    position: absolute;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50% );
+    transform: translateX( -50% );
     font-size: 2rem;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     padding: 0 1rem;
-    border-radius: 1rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.game-container .mute, .game-container .developer-mode
+{
+    background: none;
+    border: none;
+    font-size: 5vw;
+    top: 2%;
+    left: 5%;
+    transform: translateX( -50% );
+    position: absolute;
+}
+
+.game-container .developer-mode
+{
+    top: 15%;
+}
+
+.game-container .muted::after, .game-container .off::after
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    width: 100%;
+    height: 7px;
+    border-radius: 2rem;
+    background-color: red;
+    transform: rotate( 45deg );
+}
+
+.game-container .mute:focus, .game-container .developer-mode:focus
+{
+    outline: none;
 }
 
 .game-container .adjust-position 

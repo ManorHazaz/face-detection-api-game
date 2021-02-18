@@ -47,6 +47,7 @@ Promise.all([
 
 video.addEventListener( 'play', () => 
 {
+    console.log('play');
     var emojis = getEmojis();
 
     emojis = shuffle( emojis );
