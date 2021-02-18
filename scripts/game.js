@@ -1,4 +1,6 @@
 var mute = true;
+var developerMode = true;
+
 const video = _('#video');
 
 _('.return').addEventListener( 'click', () => 
@@ -19,6 +21,23 @@ _('.mute').addEventListener( 'click', () =>
         _('.mute').classList.add("muted");
     }
 });
+
+_('.developer-mode').addEventListener( 'click', () => 
+{
+	developerMode = !developerMode;
+
+    if( developerMode )
+    {
+        _('.developer-mode').classList.remove("off");
+        _('.canvas').classList.remove("hidden");        
+    }
+    else
+    {
+        _('.developer-mode').classList.add("off");
+        _('.canvas').classList.add("hidden");
+    }
+});
+
 Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
     faceapi.nets.faceLandmark68Net.loadFromUri('./models'),
@@ -34,6 +53,7 @@ video.addEventListener( 'play', () =>
 
     displayEmojis( emojis );
 	const canvas = faceapi.createCanvasFromMedia( video );
+    canvas.classList.add("canvas");
 	_('.game-board').append( canvas );
 	const displaySize = { width: video.offsetWidth, height: video.offsetHeight };
 	faceapi.matchDimensions( canvas, displaySize );
@@ -67,8 +87,8 @@ video.addEventListener( 'play', () =>
                 addV( matches );
                 if( mute )
                 {
-                matchAudio.play();
-            }
+                    matchAudio.play();
+                }
             }
 
             if( matches === 5 )
@@ -77,7 +97,7 @@ video.addEventListener( 'play', () =>
                 _('.modal').classList.remove("hidden");
                 _('.win-time').textContent = seconds + ' seconds';
             }
-            
+
             seconds = incrementSeconds( seconds, '.timer' );
         }
     }, 1000)
