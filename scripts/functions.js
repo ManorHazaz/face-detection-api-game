@@ -63,3 +63,11 @@ function addV( amount )
         _('.done').textContent += '✅ ';
     }
 }
+
+function incrementSeconds( seconds, selector ) 
+{
+    seconds += 1;
+    _( selector ).innerText = seconds;
+
+    return seconds;
+}

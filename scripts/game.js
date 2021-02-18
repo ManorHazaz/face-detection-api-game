@@ -19,6 +19,7 @@ video.addEventListener( 'play', () =>
 	const displaySize = { width: video.offsetWidth, height: video.offsetHeight };
 	faceapi.matchDimensions( canvas, displaySize );
 
+    var seconds = 0;
     var matches = 0;
 
 	const gameOn = setInterval( async () => 
@@ -30,6 +31,13 @@ video.addEventListener( 'play', () =>
 		faceapi.draw.drawFaceLandmarks( canvas, resizedDetections );
 		faceapi.draw.drawFaceExpressions( canvas, resizedDetections );
 
+        if( !detections[0] )
+        {
+            _('.adjust-position').classList.remove("hidden");
+        }
+        else
+        {
+            _('.adjust-position').classList.add("hidden");
             var faceExpression = detections[0].expressions;
             var expectedExpression = emojis[matches].name;
 
@@ -46,6 +54,9 @@ video.addEventListener( 'play', () =>
                 _('.win-time').textContent = seconds + ' seconds';
             }
 
+
+
+            seconds = incrementSeconds( seconds, '.timer' );
         }
     }, 1000)
 })
