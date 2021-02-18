@@ -37,7 +37,7 @@ canvas
     border-radius: 2rem;
     width: 80vw;
     height: 75vh;
-    padding: 2rem;
+    padding: 4vmin;
     background: rgb(91,97,185);
     background: linear-gradient(90deg, rgba(91,97,185,1) 0%, rgba(176,163,222,1) 50%, rgba(91,97,185,1) 100%);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -47,15 +47,15 @@ canvas
 .container h1
 {
     text-align: center;
-    font-size: 6vw;
+    font-size: 12vmin;
     margin: 3vh 2vw;
 }
 
 .emojis
 {
     text-align: center;
-    font-size: 5vw;
-    margin: 1rem;
+    font-size: 10vmin;
+    margin: 2vmin;
 }
 
 .container .hidden
@@ -68,7 +68,7 @@ canvas
     display: block;
     text-align: center;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 3vmin;
     border: none;
     border-radius: inherit;
     width: 20%;
