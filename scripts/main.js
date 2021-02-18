@@ -1,4 +1,4 @@
-_('.start-game').addEventListener( 'click', () => 
+_( '.start-game' ).addEventListener( 'click', () => 
 {
-	location.href = "game.html";
+	location.href = 'game.html';
 });

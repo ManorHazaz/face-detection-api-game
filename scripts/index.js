@@ -1,5 +1,4 @@
-
-var emojis = getEmojis();
+let emojis = getEmojis();
 
 emojis = shuffle( emojis );
 

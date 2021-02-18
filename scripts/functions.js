@@ -48,17 +48,13 @@ function displayEmojis( emojis )
 {
     emojis.forEach( e => 
     {
-        _('.emojis').textContent += e.code +' ';
+        _( '.emojis' ).innerHTML += `<span class='emoji ${ e.name }'> ${ e.code } </span>`;
     });
 }
 
-function addV( amount )
+function addV( name )
 {
-    _('.done').textContent = '';
-    for (let i = 0; i < amount; i++) 
-    {
-        _('.done').textContent += '✅ ';
-    }
+    _( name ).textContent = '✅';
 }
 
 function incrementSeconds( seconds, selector ) 
