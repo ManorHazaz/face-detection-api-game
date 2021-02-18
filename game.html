@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/game.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <title>Face Detection Game</title>
+  <script defer src="./scripts/face-api.min.js"></script>
+  <script defer src="./scripts/functions.js"></script>
+  <script defer src="./scripts/main.js"></script>
+  <script defer src="./scripts/game.js"></script>
+</head>
+<body>
+    <div class="game-container container">
+        <div class="game-board">
+            <video id="video" class="video" width="100%" height="auto" autoplay muted></video>
+        </div>
+
+        <div class="emojis-todo">
+            <p class="emojis"></p>
+            <p class="done"></p>
+        </div>
+
+        <div class="timer"></div>
+
+        <div class="adjust-position hidden"> Adjust Position </div>
+
+        <div class="modal hidden">
+            <div class="modal-win">
+                <h1> you win </h1>
+                <h2> you did it in </h2>
+                <h2 class="win-time"> </h2>
+                <h2> Better luck next time </h2>
+                <div class="buttons">
+                    <button class="start-game btn"> Play Again </button>
+                    <button class="return btn"> Main Menu </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
