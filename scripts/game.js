@@ -61,6 +61,7 @@ video.addEventListener( 'play', () =>
     var seconds = 0;
     var matches = 0;
     var matchAudio = new Audio('../static/sound effects/match-sound-effect.wav');
+    var winGameAudio = new Audio('../static/sound effects/win-game.wav');
 
 	const gameOn = setInterval( async () => 
 	{
@@ -97,6 +98,10 @@ video.addEventListener( 'play', () =>
                 clearInterval(gameOn);
                 _('.modal').classList.remove("hidden");
                 _('.win-time').textContent = seconds + ' seconds';
+                if( mute )
+                {
+                    winGameAudio.play();
+                }
             }
 
             seconds = incrementSeconds( seconds, '.timer' );
