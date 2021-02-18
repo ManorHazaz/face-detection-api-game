@@ -9,6 +9,11 @@ Promise.all([
 
 video.addEventListener( 'play', () => 
 {
+    var emojis = getEmojis();
+
+    emojis = shuffle( emojis );
+
+    displayEmojis( emojis );
 	const canvas = faceapi.createCanvasFromMedia( video );
 	_('.game-board').append( canvas );
 	const displaySize = { width: video.offsetWidth, height: video.offsetHeight };
@@ -25,4 +30,4 @@ video.addEventListener( 'play', () =>
 
         }
     }, 1000)
-}
+})
