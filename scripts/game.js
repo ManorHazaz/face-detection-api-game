@@ -1,5 +1,24 @@
+var mute = true;
 const video = _('#video');
 
+_('.return').addEventListener( 'click', () => 
+{
+	location.href = "index.html";
+});
+
+_('.mute').addEventListener( 'click', () => 
+{
+	mute = !mute;
+
+    if( mute )
+    {
+        _('.mute').classList.remove("muted");
+    }
+    else
+    {
+        _('.mute').classList.add("muted");
+    }
+});
 Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
     faceapi.nets.faceLandmark68Net.loadFromUri('./models'),
@@ -46,7 +65,10 @@ video.addEventListener( 'play', () =>
             {
                 matches++;
                 addV( matches );
+                if( mute )
+                {
                 matchAudio.play();
+            }
             }
 
             if( matches === 5 )
