@@ -1,0 +1,54 @@
+
+.game-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    padding-top: 2rem;
+    width: 95vw;
+    height: 90vh;
+}
+
+.game-container .game-board
+{
+    width: 92vh;
+}
+
+.game-container .emojis-todo
+{
+    position: relative;
+}
+
+.game-container .emojis-todo .done
+{
+    position: absolute;
+    top: 0;
+    text-align: left;
+    text-align: center;
+    font-size: 5vw;
+    margin: 1rem;
+}
+
+.game-container .timer
+{
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+    font-size: 2rem;
+    background: var(--primary-color);
+    padding: 0 1rem;
+    border-radius: 1rem;
+}
+
+.game-container .adjust-position 
+{
+    position: fixed;
+    position: fixed;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+    font-size: 2rem;
+    color: red;
+}

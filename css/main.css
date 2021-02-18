@@ -1,4 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
+:root
+{
+    --primary-color: #34d4c7;
+    --secondary-color: #888
+}
+
+html
+{
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
 
 body
 {
@@ -7,6 +19,71 @@ body
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--secondary-color);
+}
+
+canvas 
+{
+    position: absolute;
+    transform: translateX(-100%);
+}
+
+.container
+{
+    position: relative;
+    border-radius: 2rem;
+    width: 80vw;
+    height: 75vh;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.container h1
+{
+    text-align: center;
+    font-size: 6vw;
+    margin: 3vh 2vw;
+}
+
+.emojis
+{
+    text-align: center;
+    font-size: 5vw;
+    margin: 1rem;
+}
+
+.container .hidden
+{
+    display: none;
+}
+
+.btn
+{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    border: none;
+    border-radius: inherit;
+    width: 20%;
+    margin: 1rem auto;
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.btn:focus
+{
+    outline: none;
+}
+
+.btn:hover
+{
+    transform: translateY(-10px);
 }
