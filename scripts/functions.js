@@ -54,3 +54,12 @@ function displayEmojis( emojis )
         _('.emojis').textContent += e.code +' ';
     });
 }
+
+function addV( amount )
+{
+    _('.done').textContent = '';
+    for (let i = 0; i < amount; i++) 
+    {
+        _('.done').textContent += '✅ ';
+    }
+}
